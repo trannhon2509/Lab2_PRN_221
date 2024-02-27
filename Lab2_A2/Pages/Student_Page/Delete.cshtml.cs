@@ -52,6 +52,7 @@ namespace Lab2_A2.Pages.Student_Page
             if (student != null)
             {
                 Student = student;
+                _context.Enrollments.RemoveRange(Student.Enrollments);
                 _context.Students.Remove(Student);
                 await _context.SaveChangesAsync();
             }
